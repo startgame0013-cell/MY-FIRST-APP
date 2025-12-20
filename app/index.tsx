@@ -1,17 +1,15 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+import ProductItem from "./components/ProductItem";
 
 export default function Index() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Coffee Shop ☕️</Text>
+      <Text style={styles.title}>Coffee Shop ☕</Text>
 
-      <Text style={styles.description}>
-        Fresh coffee, baked daily, made with love.
-      </Text>
-
-      <Image
-        source={require("../assets/coffe.png")}
-        style={styles.image}
+      <ProductItem
+        image={require("../assets/images/coffe.png")}
+        name="Latte"
+        price={3.5}
       />
     </View>
   );
@@ -20,22 +18,13 @@ export default function Index() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding: 20,
     justifyContent: "center",
     alignItems: "center",
-    padding: 20,
   },
   title: {
     fontSize: 28,
     fontWeight: "bold",
-    marginBottom: 10,
-  },
-  description: {
-    fontSize: 16,
-    textAlign: "center",
     marginBottom: 20,
-  },
-  image: {
-    width: 200,
-    height: 200,
   },
 });
